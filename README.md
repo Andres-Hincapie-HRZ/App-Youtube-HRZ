@@ -46,4 +46,4 @@ python app.py
 
 ## 📁 Estructura del Proyecto:
 
-![image](https://github.com/user-attachments/assets/e9588441-36d7-43a4-96cc-a08ff69c8331)
+![image](https://github.com/user-attachments/assets/6b2d9a98-a113-4f0b-be00-93697082ddb5)
