@@ -48,7 +48,8 @@ python app.py
 
 ![image](https://github.com/user-attachments/assets/161c9210-60cd-4650-b0f7-6c4bd6c75c9e)
 
-## ⚠ Los 3 Archivos faltantes:
+## ⚠ Los 3 Archivos faltantes: https://drive.google.com/drive/folders/13WA_YyujFrXhLIMP8E0HYontDFuYTbcD?usp=drive_link
 ![image](https://github.com/user-attachments/assets/92f48b1f-1655-44e8-9726-98248c51fbb4)
+
 Descargar y agregar  en la carpeta del proyecto como se muestra en la imagen anterior
 
