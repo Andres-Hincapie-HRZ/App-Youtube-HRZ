@@ -1,0 +1,43 @@
+/* Autor: Andrés Hincapie Ruiz (A.HRZ) */
+/* Fecha de creación: 16 de diciembre de 2024 */
+/* Estilos para mi descargador de YouTube */
+
+/* Defino el estilo de mi contenedor principal */
+.container {
+    max-width: 600px; /* Establezco un ancho máximo para mejor legibilidad */
+    margin: 0 auto; /* Centro el contenedor en la página */
+    padding: 20px; /* Añado espacio interno */
+    text-align: center; /* Centro el contenido */
+}
+
+/* Estilizo mi campo de entrada de texto */
+input[type="text"] {
+    width: 80%; /* Establezco el ancho del campo */
+    padding: 10px; /* Añado espacio interno */
+    margin: 10px 0; /* Añado márgenes verticales */
+}
+
+/* Estilizo mis selectores */
+select {
+    padding: 10px; /* Añado espacio interno */
+    margin: 10px; /* Añado márgenes */
+}
+
+/* Estilizo mi botón de descarga */
+button {
+    padding: 10px 20px; /* Añado espacio interno */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en blanco */
+    border: none; /* Elimino el borde */
+    cursor: pointer; /* Cambio el cursor al pasar por encima */
+}
+
+/* Efecto hover para mi botón */
+button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilizo el div de estado */
+#status {
+    margin-top: 20px; /* Añado espacio superior */
+}
