@@ -2,42 +2,419 @@
 /* Fecha de creación: 16 de diciembre de 2024 */
 /* Estilos para mi descargador de YouTube */
 
-/* Defino el estilo de mi contenedor principal */
+:root {
+    --primary-color: #00c6ff;
+    --secondary-color: #0f172a;
+    --text-color: #ffffff;
+    --background-color: #020617;
+    --input-background: #1e293b;
+    --hover-color: #38bdf8;
+    --option-background: #0f172a;
+    --option-hover: #1e293b;
+    --success-color: #22c55e;
+    --error-color: #ef4444;
+    --card-background: #1e293b;
+    --border-color: #334155;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-color) 0%, #1e1b4b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
-    max-width: 600px; /* Establezco un ancho máximo para mejor legibilidad */
-    margin: 0 auto; /* Centro el contenedor en la página */
-    padding: 20px; /* Añado espacio interno */
-    text-align: center; /* Centro el contenido */
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background-color: rgba(15, 23, 42, 0.8);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(20px);
 }
 
-/* Estilizo mi campo de entrada de texto */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-shadow: 0 0 20px rgba(0, 198, 255, 0.2);
+}
+
+h1 i {
+    margin-right: 10px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 2rem;
+    background-color: var(--input-background);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.input-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.2);
+}
+
+.input-container i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
 input[type="text"] {
-    width: 80%; /* Establezco el ancho del campo */
-    padding: 10px; /* Añado espacio interno */
-    margin: 10px 0; /* Añado márgenes verticales */
+    width: 100%;
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 16px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Estilizo mis selectores */
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+}
+
+.preview-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.preview-container:hover {
+    transform: translateY(-2px);
+}
+
+.preview-container img {
+    width: 240px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-info h3 {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.select-container {
+    position: relative;
+    background-color: var(--option-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.select-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.2);
+}
+
+.select-container i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
 select {
-    padding: 10px; /* Añado espacio interno */
-    margin: 10px; /* Añado márgenes */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-/* Estilizo mi botón de descarga */
+/* Estilo para las opciones del select */
+select option {
+    background-color: var(--option-background);
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Estilos específicos para las opciones al hacer hover/seleccionar */
+select option:hover,
+select option:focus,
+select option:active,
+select option:checked {
+    background-color: var(--option-hover) !important;
+    color: #ffffff !important;
+}
+
+/* Estilo específico para Firefox */
+@-moz-document url-prefix() {
+    select {
+        color: #ffffff;
+    }
+    
+    select option {
+        background-color: var(--option-background);
+        color: #ffffff;
+    }
+    
+    select option:hover,
+    select option:focus,
+    select option:active,
+    select option:checked {
+        background-color: var(--option-hover) !important;
+        color: #ffffff !important;
+    }
+}
+
+/* Estilo específico para Chrome/Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {
+        color: #ffffff;
+    }
+    
+    select option {
+        background-color: var(--option-background);
+        color: #ffffff;
+    }
+    
+    select option:hover,
+    select option:focus,
+    select option:active,
+    select option:checked {
+        background-color: var(--option-hover) !important;
+        color: #ffffff !important;
+    }
+}
+
+/* Estilo cuando el select está abierto */
+select:focus {
+    outline: none;
+}
+
+/* Añadir flecha personalizada */
+.select-container::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.select-container:hover {
+    border-color: var(--primary-color);
+    background-color: var(--option-hover);
+}
+
+.select-container:hover i,
+.select-container:hover::after {
+    color: var(--hover-color);
+}
+
+/* Animación para la flecha cuando el select está abierto */
+.select-container:focus-within::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
 button {
-    padding: 10px 20px; /* Añado espacio interno */
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto en blanco */
-    border: none; /* Elimino el borde */
-    cursor: pointer; /* Cambio el cursor al pasar por encima */
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0ea5e9 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 198, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem auto;
 }
 
-/* Efecto hover para mi botón */
 button:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 198, 255, 0.3);
+    background: linear-gradient(135deg, #0ea5e9 0%, var(--primary-color) 100%);
 }
 
-/* Estilizo el div de estado */
+button:active {
+    transform: translateY(0);
+}
+
+button i {
+    font-size: 1.2rem;
+}
+
 #status {
-    margin-top: 20px; /* Añado espacio superior */
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.loader {
+    width: 200px;
+    height: 4px;
+    background-color: var(--input-background);
+    border-radius: 2px;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    height: 100%;
+    width: 50%;
+    background-color: var(--primary-color);
+    animation: loading 1s linear infinite;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+}
+
+@keyframes loading {
+    0% { left: -50%; }
+    100% { left: 100%; }
+}
+
+/* Estilos para mensajes de éxito y error */
+.success-message {
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.error-message {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+/* Efectos hover para iconos */
+.input-container i,
+.select-container i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.input-container:hover i,
+.select-container:hover i {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Estilos para el contenedor de acciones post-descarga */
+.download-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.action-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--option-hover);
+    border-color: var(--primary-color);
+}
+
+/* Estilos para la barra de progreso */
+.progress-container {
+    width: 100%;
+    background-color: var(--input-background);
+    border-radius: 8px;
+    padding: 4px;
+    position: relative;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.progress-bar {
+    height: 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0ea5e9 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-weight: 500;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
