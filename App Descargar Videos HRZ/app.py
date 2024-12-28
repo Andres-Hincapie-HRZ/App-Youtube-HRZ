@@ -1,6 +1,6 @@
 # Autor: Andrés Hincapie Ruiz (A.HRZ)
 # Fecha de creación: 16 de diciembre de 2024
-# Aplicación principal para el descargador de YouTube
+# Aplicación principal para el descargador de YouTube V2
 
 # Importo las bibliotecas necesarias para mi aplicación
 from flask import Flask, request, jsonify, send_file  # Necesito Flask para crear mi servidor web
