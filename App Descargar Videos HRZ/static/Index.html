@@ -8,31 +8,54 @@
     <!-- Defino el título de mi página -->
     <title>Descargador de YouTube</title>
     <!-- Vinculo mi archivo de estilos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <!-- Mi contenedor principal para la interfaz -->
     <div class="container">
         <!-- Título principal de la aplicación -->
-        <h1>Descargador de YouTube HRZ</h1>
-        <!-- Campo para ingresar la URL del video -->
-        <input type="text" id="url" placeholder="Ingresa la URL del video">
-        <!-- Selector del formato de descarga -->
-        <select id="format">
-            <option value="mp3">MP3</option>
-            <option value="mp4">MP4</option>
-        </select>
-        <!-- Selector de calidad para videos (inicialmente oculto) -->
-        <select id="quality" style="display: none;">
-            <option value="highest">Mejor calidad</option>
-            <option value="720p">720p</option>
-            <option value="480p">480p</option>
-            <option value="360p">360p</option>
-        </select>
-        <!-- Botón para iniciar la descarga -->
-        <button onclick="descargar()">Descargar</button>
-        <!-- Div para mostrar el estado de la descarga -->
+        <h1><i class="fab fa-youtube"></i> Descargador de YouTube HRZ</h1>
+        
+        <div class="input-container">
+            <i class="fas fa-link"></i>
+            <input type="text" id="url" placeholder="Ingresa la URL del video">
+        </div>
+
+        <div class="preview-container" id="preview-container" style="display: none;">
+            <img id="thumbnail" src="" alt="Miniatura del video">
+            <div class="video-info">
+                <h3 id="video-title"></h3>
+                <p id="video-duration"></p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="select-container">
+                <i class="fas fa-file-audio"></i>
+                <select id="format">
+                    <option value="mp3">MP3</option>
+                    <option value="mp4">MP4</option>
+                </select>
+            </div>
+
+            <div class="select-container" id="quality-container" style="display: none;">
+                <i class="fas fa-video"></i>
+                <select id="quality">
+                    <option value="highest">Mejor calidad</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                    <option value="360p">360p</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="descargar()">
+            <i class="fas fa-download"></i> Descargar
+        </button>
+
         <div id="status"></div>
+        <div class="loader" id="loader" style="display: none;"></div>
     </div>
     <!-- Vinculo mi archivo JavaScript -->
     <script src="/static/script.js"></script>
