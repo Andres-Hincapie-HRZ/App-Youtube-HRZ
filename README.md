@@ -4,6 +4,12 @@
 ## 📝 Descripción
 Una aplicación web desarrollada con Flask que permite descargar videos y audio de YouTube de manera sencilla y eficiente. Soporta múltiples formatos y calidades de descarga.
 
+![image](https://github.com/user-attachments/assets/22c66be5-4916-486c-b5dc-03b4edcb10dc)
+
+![image](https://github.com/user-attachments/assets/e0b1db58-9619-4891-9d9a-b50f92efc4a0)
+
+
+
 ## ✨ Características
 - 🎵 Descarga de audio en formato MP3
 - 🎥 Descarga de video en formato MP4
